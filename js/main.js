@@ -1,9 +1,9 @@
 function Header() {
-  return <header></header>;
+  return <header className="header"></header>;
 }
 
 function Footer() {
-  return <footer></footer>;
+  return <footer className="footer"></footer>;
 }
 
 function SearchableNewsFeed() {
@@ -38,7 +38,7 @@ function SearchableNewsFeedItem() {
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
       <main>
         <SearchableNewsFeed />
