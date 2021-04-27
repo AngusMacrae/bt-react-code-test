@@ -1,5 +1,10 @@
 function Header() {
-  return <header className="header"></header>;
+  return (
+    <header className="header">
+      <img src="/img/bt-logo-white.svg" alt="BT" className="header__logo" />
+      <h1>BT React Code Test - by Angus Macrae - 27/04/21</h1>
+    </header>
+  );
 }
 
 function Footer() {
