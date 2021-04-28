@@ -61,7 +61,7 @@ function SearchableNewsFeedResults({ searchResults }) {
   return (
     <ul>
       {searchResults.map((article) => (
-        <SearchableNewsFeedItem article={article} />
+        <SearchableNewsFeedItem article={article} key={article.url} />
       ))}
     </ul>
   );
