@@ -112,7 +112,10 @@ body {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 0.5rem;
+  padding-left: 0.75rem;
+  padding-left: clamp(0.75rem, 2vmin, 1.5rem);
+  padding-right: 0.75rem;
+  padding-right: clamp(0.75rem, 2vmin, 1.5rem);
 }
 
 main {
@@ -124,7 +127,9 @@ main {
   background-color: var(--bt-purple);
   color: #fff;
   padding-top: 0.5rem;
+  padding-top: clamp(0.75rem, 2vmin, 1rem);
   padding-bottom: 0.5rem;
+  padding-bottom: clamp(0.75rem, 2vmin, 1rem);
 }
 
 .header .content-container {
@@ -134,8 +139,16 @@ main {
 
 .header__logo {
   width: 40px;
+  width: clamp(40px, 6vmin, 50px);
   height: 40px;
+  height: clamp(40px, 6vmin, 50px);
   margin-right: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 5vmin, 2rem);
+  line-height: 1.25;
 }
 
 .search-form {
@@ -143,7 +156,9 @@ main {
   justify-content: center;
   max-width: 100%;
   margin-top: 3rem;
+  margin-top: clamp(2rem, 6vmin, 3.5rem);
   margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 6vmin, 3.5rem);
 }
 
 .search-form__input,
@@ -176,7 +191,9 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 3rem;
+  gap: clamp(2rem, 6vmin, 4rem);
   margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 6vmin, 3.5rem);
 }
 
 .search-results__item {
@@ -190,6 +207,7 @@ main {
 
 .search-results__item h2 {
   font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vmin, 1.5rem);
   line-height: 1.25;
 }
 
