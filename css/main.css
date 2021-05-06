@@ -125,6 +125,39 @@ main {
   margin-right: 1rem;
 }
 
+.search-form {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.search-form__input,
+.search-form__submit {
+  padding: 0.5rem 1rem;
+  font-size: 1.15rem;
+  border: 1px solid var(--bt-purple);
+}
+
+.search-form__input {
+  border-top-left-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  border-right: none;
+  flex: 1;
+  min-width: 0;
+  max-width: 300px;
+}
+
+.search-form__submit {
+  flex: 0;
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+  background-color: var(--bt-purple);
+  color: #fff;
+  cursor: pointer;
+}
+
 .search-results {
   padding: 0;
   display: grid;

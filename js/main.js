@@ -54,12 +54,18 @@ function SearchableNewsFeedInput({ performSearch, query, setQuery }) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} value={query} />
-        <button type="submit">Search</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="search-form">
+      <input
+        type="text"
+        onChange={handleChange}
+        value={query}
+        placeholder="Search news articles..."
+        className="search-form__input"
+      />
+      <button type="submit" className="search-form__submit">
+        Search
+      </button>
+    </form>
   );
 }
 
