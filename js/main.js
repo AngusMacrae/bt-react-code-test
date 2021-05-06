@@ -84,6 +84,12 @@ function SearchableNewsFeed() {
 }
 
 function SearchableNewsFeedInput({ performSearch, query, setQuery }) {
+  const inputRef = React.useRef();
+
+  React.useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   function handleSubmit(event) {
     event.preventDefault();
     performSearch(query);
@@ -100,6 +106,7 @@ function SearchableNewsFeedInput({ performSearch, query, setQuery }) {
         type="text"
         onChange={handleChange}
         value={query}
+        ref={inputRef}
         placeholder="Search news articles..."
         className="search-form__input"
       />
