@@ -84,6 +84,8 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -101,7 +103,7 @@ body {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 main {
@@ -112,6 +114,8 @@ main {
 .footer {
   background-color: var(--bt-purple);
   color: #fff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .header .content-container {
@@ -129,8 +133,8 @@ main {
   display: flex;
   justify-content: center;
   max-width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .search-form__input,
@@ -163,6 +167,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 3rem;
+  margin-bottom: 3rem;
 }
 
 .search-results__item {
