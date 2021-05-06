@@ -166,6 +166,7 @@ h1 {
   padding: 0.5rem 1rem;
   font-size: 1.15rem;
   border: 1px solid var(--bt-purple);
+  outline: none;
 }
 
 .search-form__input {
@@ -184,6 +185,10 @@ h1 {
   background-color: var(--bt-purple);
   color: #fff;
   cursor: pointer;
+}
+
+.search-form__input:focus {
+  box-shadow: 0 1px 20px -5px var(--bt-purple);
 }
 
 .search-results {
