@@ -215,7 +215,7 @@ h1 {
 
 .search-results__item article {
   display: grid;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .search-results__item h2 {
