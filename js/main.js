@@ -92,7 +92,11 @@ function SearchableNewsFeedInput({ performSearch, query, setQuery }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    performSearch(query);
+    const processedQuery = query.trim();
+    const queryRegex = /^[a-z0-9]+$/i;
+    if (queryRegex.test(processedQuery)) {
+      performSearch(processedQuery);
+    }
   }
 
   function handleChange(event) {
