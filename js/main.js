@@ -1,14 +1,20 @@
 function Header() {
   return (
     <header className="header">
-      <img src="/img/bt-logo-white.svg" alt="BT" className="header__logo" />
-      <h1>BT React Code Test - by Angus Macrae - 06/05/21</h1>
+      <div className="content-container">
+        <img src="/img/bt-logo-white.svg" alt="BT" className="header__logo" />
+        <h1>BT React Code Test - by Angus Macrae - 06/05/21</h1>
+      </div>
     </header>
   );
 }
 
 function Footer() {
-  return <footer className="footer"></footer>;
+  return (
+    <footer className="footer">
+      <div className="content-container"></div>
+    </footer>
+  );
 }
 
 function SearchableNewsFeed() {
@@ -25,7 +31,7 @@ function SearchableNewsFeed() {
   }
 
   return (
-    <div>
+    <div className="content-container">
       <SearchableNewsFeedInput
         performSearch={performSearch}
         query={query}
