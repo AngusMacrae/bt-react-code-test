@@ -12,7 +12,48 @@ function Header() {
 function Footer() {
   return (
     <footer className="footer">
-      <div className="content-container"></div>
+      <div className="content-container">
+        <small>
+          <ul className="footer__links">
+            <li>
+              <a
+                href="https://gnews.io/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                GNews
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.flaticon.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Flaticon
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.bt.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                BT
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://angusmacrae.dev/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Angus Macrae
+              </a>
+            </li>
+          </ul>
+        </small>
+      </div>
     </footer>
   );
 }

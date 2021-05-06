@@ -88,6 +88,15 @@ html {
   padding: 0;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -192,18 +201,32 @@ main {
   display: flex;
   align-items: center;
   margin-left: auto;
-  text-decoration: none;
   color: var(--bt-purple);
-}
-
-.search-results__item--link:hover {
-  text-decoration: underline;
 }
 
 .search-results__item--link img {
   width: 18px;
   height: 18px;
   margin-left: 3px;
+}
+
+.footer {
+  color: #fff;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__links li {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.footer__links li:last-of-type {
+  padding-right: 0;
 }
 
 /* ==========================================================================
@@ -295,7 +318,9 @@ main {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+  .footer__links {
+    justify-content: flex-end;
+  }
 }
 
 @media print,
