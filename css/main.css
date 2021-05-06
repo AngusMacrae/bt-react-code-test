@@ -201,6 +201,14 @@ h1 {
   margin-bottom: clamp(2rem, 6vmin, 3.5rem);
 }
 
+.search-results__status {
+  display: block;
+  text-align: center;
+  font-size: 1.15rem;
+  margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 6vmin, 3.5rem);
+}
+
 .search-results__item {
   display: block;
 }

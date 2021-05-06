@@ -61,14 +61,21 @@ function Footer() {
 function SearchableNewsFeed() {
   const [query, setQuery] = React.useState("");
   const [searchResults, setSearchResults] = React.useState([]);
+  const [searchStatus, setSearchStatus] = React.useState("");
 
   async function performSearch(query) {
+    setSearchStatus("Searching...");
     const apiKey = "4b539b2ac27bf00835b1c5626bb3c284";
     const response = await fetch(
       `https://gnews.io/api/v4/search?max=10&lang=en&q=${query}&token=${apiKey}`
     );
     const data = await response.json();
     setSearchResults(data.articles);
+    if (data.totalArticles > 0) {
+      setSearchStatus("");
+    } else {
+      setSearchStatus("No articles found :(");
+    }
   }
 
   return (
@@ -77,13 +84,22 @@ function SearchableNewsFeed() {
         performSearch={performSearch}
         query={query}
         setQuery={setQuery}
+        setSearchStatus={setSearchStatus}
       />
-      <SearchableNewsFeedResults searchResults={searchResults} />
+      <SearchableNewsFeedResults
+        searchResults={searchResults}
+        searchStatus={searchStatus}
+      />
     </div>
   );
 }
 
-function SearchableNewsFeedInput({ performSearch, query, setQuery }) {
+function SearchableNewsFeedInput({
+  performSearch,
+  query,
+  setQuery,
+  setSearchStatus,
+}) {
   const inputRef = React.useRef();
 
   React.useEffect(() => {
@@ -96,6 +112,8 @@ function SearchableNewsFeedInput({ performSearch, query, setQuery }) {
     const queryRegex = /^[a-z0-9]+$/i;
     if (queryRegex.test(processedQuery)) {
       performSearch(processedQuery);
+    } else {
+      setSearchStatus("Search query may only contain letters or numbers");
     }
   }
 
@@ -121,14 +139,18 @@ function SearchableNewsFeedInput({ performSearch, query, setQuery }) {
   );
 }
 
-function SearchableNewsFeedResults({ searchResults }) {
-  return (
-    <ul className="search-results">
-      {searchResults.map((article) => (
-        <SearchableNewsFeedItem article={article} key={article.url} />
-      ))}
-    </ul>
-  );
+function SearchableNewsFeedResults({ searchResults, searchStatus }) {
+  if (searchStatus) {
+    return <span className="search-results__status">{searchStatus}</span>;
+  } else {
+    return (
+      <ul className="search-results">
+        {searchResults.map((article) => (
+          <SearchableNewsFeedItem article={article} key={article.url} />
+        ))}
+      </ul>
+    );
+  }
 }
 
 function SearchableNewsFeedItem({ article }) {
