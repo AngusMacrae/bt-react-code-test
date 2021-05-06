@@ -132,12 +132,17 @@ function SearchableNewsFeedItem({ article }) {
   } = article;
 
   const truncatedContent = content.substring(0, 150);
+  const processedPublicationDate = publishedAt
+    .substring(0, 10)
+    .replaceAll("-", "/");
 
   return (
     <li className="search-results__item">
       <article>
         <h2>{title}</h2>
-        <span className="search-results__item--metadata">{source.name}</span>
+        <span className="search-results__item--metadata">
+          {source.name} - {processedPublicationDate}
+        </span>
         <p>{truncatedContent}...</p>
         <a
           href={url}
