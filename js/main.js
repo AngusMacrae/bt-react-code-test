@@ -68,10 +68,24 @@ function SearchableNewsFeedResults({ searchResults }) {
 }
 
 function SearchableNewsFeedItem({ article }) {
+  const {
+    title,
+    description,
+    content,
+    url,
+    image,
+    publishedAt,
+    source,
+  } = article;
+
+  const truncatedContent = content.substring(0, 150);
+
   return (
     <li>
       <article>
-        <h2>{article.title}</h2>
+        <h2>{title}</h2>
+        <span>{source.name}</span>
+        <p>{truncatedContent}...</p>
       </article>
     </li>
   );
