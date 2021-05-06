@@ -59,7 +59,7 @@ function SearchableNewsFeedInput({ performSearch, query, setQuery }) {
 
 function SearchableNewsFeedResults({ searchResults }) {
   return (
-    <ul>
+    <ul className="search-results">
       {searchResults.map((article) => (
         <SearchableNewsFeedItem article={article} key={article.url} />
       ))}
@@ -81,10 +81,10 @@ function SearchableNewsFeedItem({ article }) {
   const truncatedContent = content.substring(0, 150);
 
   return (
-    <li>
+    <li className="search-results__item">
       <article>
         <h2>{title}</h2>
-        <span>{source.name}</span>
+        <span className="search-results__item--metadata">{source.name}</span>
         <p>{truncatedContent}...</p>
       </article>
     </li>

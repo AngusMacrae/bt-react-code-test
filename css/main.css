@@ -71,6 +71,7 @@ textarea {
 
 :root {
   --bt-purple: #5514b4;
+  --light-purple: #979;
 }
 
 html {
@@ -121,6 +122,35 @@ main,
   width: 40px;
   height: 40px;
   margin-right: 1rem;
+}
+
+.search-results {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 3rem;
+}
+
+.search-results__item {
+  display: block;
+}
+
+.search-results__item article {
+  display: grid;
+  gap: 1rem;
+}
+
+.search-results__item article > * {
+  margin: 0;
+}
+
+.search-results__item h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.search-results__item--metadata {
+  color: var(--light-purple);
 }
 
 /* ==========================================================================
