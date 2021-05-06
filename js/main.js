@@ -2,7 +2,7 @@ function Header() {
   return (
     <header className="header">
       <img src="/img/bt-logo-white.svg" alt="BT" className="header__logo" />
-      <h1>BT React Code Test - by Angus Macrae - 27/04/21</h1>
+      <h1>BT React Code Test - by Angus Macrae - 06/05/21</h1>
     </header>
   );
 }
