@@ -174,10 +174,6 @@ main {
   gap: 1rem;
 }
 
-.search-results__item article > * {
-  margin: 0;
-}
-
 .search-results__item h2 {
   font-size: 1.5rem;
   line-height: 1.25;
@@ -185,6 +181,24 @@ main {
 
 .search-results__item--metadata {
   color: var(--light-purple);
+}
+
+.search-results__item--link {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  text-decoration: none;
+  color: var(--bt-purple);
+}
+
+.search-results__item--link:hover {
+  text-decoration: underline;
+}
+
+.search-results__item--link img {
+  width: 18px;
+  height: 18px;
+  margin-left: 3px;
 }
 
 /* ==========================================================================

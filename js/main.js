@@ -98,6 +98,13 @@ function SearchableNewsFeedItem({ article }) {
         <h2>{title}</h2>
         <span className="search-results__item--metadata">{source.name}</span>
         <p>{truncatedContent}...</p>
+        <a
+          href={url}
+          rel="noopener noreferrer"
+          className="search-results__item--link"
+        >
+          View Full Article <img src="/img/right-arrow.svg" alt="" />
+        </a>
       </article>
     </li>
   );
