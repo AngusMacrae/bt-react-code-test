@@ -131,6 +131,7 @@ function SearchableNewsFeedInput({
         ref={inputRef}
         placeholder="Search news articles..."
         className="search-form__input"
+        aria-label="Search query"
       />
       <button type="submit" className="search-form__submit">
         Search
