@@ -109,7 +109,7 @@ function SearchableNewsFeedInput({
   function handleSubmit(event) {
     event.preventDefault();
     const processedQuery = query.trim();
-    const queryRegex = /^[a-z0-9]+$/i;
+    const queryRegex = /^[a-z0-9 ]+$/i;
     if (queryRegex.test(processedQuery)) {
       performSearch(processedQuery);
     } else {
