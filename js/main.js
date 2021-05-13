@@ -65,13 +65,13 @@ function SearchableNewsFeed() {
 
   async function performSearch(query) {
     setSearchStatus("Searching...");
-    const apiKey = "4b539b2ac27bf00835b1c5626bb3c284";
+    const apiKey = "53b70bc90e254094a234cb1b6b2739fc";
     const response = await fetch(
-      `https://gnews.io/api/v4/search?max=10&lang=en&q=${query}&token=${apiKey}`
+      `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`
     );
     const data = await response.json();
     setSearchResults(data.articles);
-    if (data.totalArticles > 0) {
+    if (data.totalResults > 0) {
       setSearchStatus("");
     } else {
       setSearchStatus("No articles found :(");
@@ -160,9 +160,10 @@ function SearchableNewsFeedItem({ article }) {
     description,
     content,
     url,
-    image,
+    urlToImage,
     publishedAt,
     source,
+    author,
   } = article;
 
   const truncatedContent = content.substring(0, 150);
@@ -175,7 +176,7 @@ function SearchableNewsFeedItem({ article }) {
       <article>
         <h2>{title}</h2>
         <span className="search-results__item--metadata">
-          {source.name} - {processedPublicationDate}
+          {author} - {processedPublicationDate}
         </span>
         <p>{truncatedContent}...</p>
         <a
